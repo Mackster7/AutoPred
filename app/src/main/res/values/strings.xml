@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Auto Consultancy</string>
+    <string-array name="fuel">
+        <item>Fuel Type</item>>
+        <item>CNG</item>
+        <item>Petrol</item>>
+        <item>Diesel</item>>
+    </string-array>
+</resources>
