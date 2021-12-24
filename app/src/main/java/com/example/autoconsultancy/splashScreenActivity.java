@@ -18,6 +18,7 @@ public class splashScreenActivity extends AppCompatActivity {
     Animation topAnim,bottomAnim;
     ImageView image;
     TextView logo,slogan;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,7 @@ public class splashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(splashScreenActivity.this,MainActivity.class);
+                Intent intent=new Intent(splashScreenActivity.this,LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

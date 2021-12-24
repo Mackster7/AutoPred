@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1072469002513",
+    "project_id": "auto-consultancy",
+    "storage_bucket": "auto-consultancy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072469002513:android:acfcc09bcb882fba0724b0",
+        "android_client_info": {
+          "package_name": "com.example.autoconsultancy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072469002513-e806nbjs1cik96ducrh5al2roapocqpa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQC92arbiBoHCj4GoibV980Yy3HVweUNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1072469002513-e806nbjs1cik96ducrh5al2roapocqpa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
