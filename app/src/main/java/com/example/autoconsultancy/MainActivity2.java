@@ -17,7 +17,7 @@ import java.util.Locale;
 public class MainActivity2 extends AppCompatActivity {
     public TextView price,price_plus;
     public Button ok_button,olx;
-    public ImageView image,image1;
+    public ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
