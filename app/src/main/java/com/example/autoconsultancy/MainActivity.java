@@ -32,7 +32,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    final String URL="http://192.168.111.210:5000/predict";
+    final String URL="http://192.168.13.210:5000/predict";
     public EditText year, kms_driven;
     public AutoCompleteTextView name,fuel_type;
     public AutoCompleteTextView company;
