@@ -15,18 +15,21 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class MainActivity2 extends AppCompatActivity {
-    public TextView price,price_plus;
+    public TextView price,price_plus,information;
     public Button ok_button,olx;
     public ImageView image;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
         price=(TextView) findViewById(R.id.price);
         price_plus=(TextView) findViewById(R.id.priceplus);
         ok_button=(Button) findViewById(R.id.close_button);
         image=(ImageView) findViewById(R.id.logo);
+        information=(TextView) findViewById(R.id.information);
         olx=(Button) findViewById(R.id.olx);
 
         String value= getIntent().getStringExtra("key");
@@ -84,5 +87,16 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        information.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPopUpWindow();
+            }
+        });
+    }
+    private void openPopUpWindow(){
+        Intent info=new Intent(MainActivity2.this,priceInfo.class);
+        startActivity(info);
     }
 }

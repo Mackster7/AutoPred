@@ -32,7 +32,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    final String URL="http://192.168.13.210:5000/predict";
+    final String URL="http://192.168.218.210:5000/predict";
     public EditText year, kms_driven;
     public AutoCompleteTextView name,fuel_type;
     public AutoCompleteTextView company;
@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                if(validate()){
+                int key=validate();
+                if(key==1){
                     StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -129,15 +130,48 @@ public class MainActivity extends AppCompatActivity {
 //                    i.putExtra("key",s);
 //                    startActivity(i);
                 }
+                else if(key==2){
+                    Toast.makeText(getApplicationContext(),"Please Enter Appropriate Model",Toast.LENGTH_SHORT).show();
+                }
+                else if(key==3){
+                    Toast.makeText(getApplicationContext(),"Kilometers Driven cannot be Negative",Toast.LENGTH_SHORT).show();
+                }
+                else if(key==4){
+                    Toast.makeText(getApplicationContext(),"Invalid Fuel Type",Toast.LENGTH_SHORT).show();
+                }
                 else
                     Toast.makeText(getApplicationContext(), "All fields should be filled", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    public boolean validate() {
-        return !name.getText().toString().equals("") && !company.getText().toString().equals("") &&
-                !year.getText().toString().equals("") && !kms_driven.getText().toString().equals("") &&
-                !fuel_type.getText().toString().equals("") ;
+    public int validate() {
+        boolean val;
+        int code = 1;
+        if (val = name.getText().toString().equals("") || company.getText().toString().equals("") ||
+                year.getText().toString().equals("") || kms_driven.getText().toString().equals("") ||
+                fuel_type.getText().toString().equals("")) {
+            code = 0;
+        }
+        else if (fuel_type.getText().toString().isEmpty()) {
+            code = 2;
+        } else if (kms_driven.getText().toString().isEmpty()) {
+            code = 3;
+        }
+        else {
+            int y = Integer.parseInt(year.getText().toString());
+            int km = Integer.parseInt(kms_driven.getText().toString());
+            String fuel=fuel_type.getText().toString();
+            if ((y > 2022 || y < 1990)) {
+                code = 2;
+            }
+            if (km < 0) {
+                code = 3;
+            }
+            if (!(fuel.equals("Petrol") || fuel.equals("Diesel"))) {
+                code = 4;
+            }
+        }
+        return code;
     }
 }
