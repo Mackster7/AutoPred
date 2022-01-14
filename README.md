@@ -2,8 +2,9 @@ PredAuto is an android app which predicts the price of second hand used cars,
 after cloning these project set up your firebase account and do modifications
 as required in the project.
 
-flow of app SPLASH_SCREEN->SIGN_UP_WITH_GOOGLE->CAR_DETAILS->GET_PRICE->SELL_ONLINE.
+Host the Flask API in Local Host or Cloud to Hit Requests and Responses. 
 
+Flow of app SPLASH_SCREEN->SIGN_UP_WITH_GOOGLE->CAR_DETAILS->GET_PRICE->SELL_ONLINE.
 ![WhatsApp Image 2022-01-09 at 1 51 58 PM](https://user-images.githubusercontent.com/52175247/149513568-402b9d2c-5dfa-49c2-b24f-2e6bf8f62a8b.jpeg)
 ![WhatsApp Image 2022-01-09 at 1 51 58 PM (1)](https://user-images.githubusercontent.com/52175247/149513575-494a39f0-9c31-4926-b060-7152618035ae.jpeg)
 ![WhatsApp Image 2022-01-09 at 1 51 58 PM (2)](https://user-images.githubusercontent.com/52175247/149513594-81e2dd18-6607-472b-9314-8ffb35276754.jpeg)
